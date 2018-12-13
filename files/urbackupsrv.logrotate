@@ -1,0 +1,10 @@
+"/var/log/urbackup.log" {
+	weekly
+	rotate 12
+	missingok
+	create 640 urbackup urbackup
+	compress
+	postrotate
+		/etc/init.d/urbackupsrv restart
+	endscript
+}
